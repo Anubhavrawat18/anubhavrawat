@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --green: #00FF41;
+  --cyan: #00D9FF;
+  --purple: #BF5AF2;
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --border: #1e1e1e;
+  --muted: #4a4a4a;
+  --text: #c8c8c8;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  min-height: 100vh;
+}
+
+/* Dot grid background */
+/* body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #ffffff28 1px, transparent 1px); */
+  /* background-image:
+  linear-gradient(#ffffff12 1px, transparent 1px),
+  linear-gradient(90deg, #ffffff12 1px, transparent 1px);
+  background-size: 32px 32px; */
+  /* background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    #ffffff13 3px,
+    #ffffff23 4px
+  );
+  background-size: 100% 4px; */
+  /* background-size: 28px 28px;
+} */
+
+/* Subtle vignette over grid */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, #0a0a0a 100%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--green); }
+
+/* Cursor blink */
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background: var(--green);
+  margin-left: 4px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+  border-radius: 1px;
+}
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* Glow utilities */
+.glow-green { text-shadow: 0 0 12px #00FF4166; }
+.glow-cyan  { text-shadow: 0 0 12px #00D9FF55; }
+.glow-purple { text-shadow: 0 0 12px #BF5AF244; }
+
+/* Section separator */
+.section-sep {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00FF4133, #00D9FF33, transparent);
+  margin: 0 auto;
+  max-width: 860px;
+  position: relative;
+  z-index: 10;
+}
+.section-sep::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--green), var(--cyan));
+  margin: 0 auto;
+  margin-top: -1px;
+  animation: sep-slide 3s ease-in-out infinite alternate;
+  box-shadow: 0 0 8px #00FF4166;
+}
+@keyframes sep-slide {
+  0%   { margin-left: 10%; }
+  100% { margin-left: 80%; }
+}
