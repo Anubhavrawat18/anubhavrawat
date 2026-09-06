@@ -7,7 +7,7 @@ const projects = [
     name: "BEAM - A Real-time Chat Application",
     tags: ["React", "Node.js", "MongoDB", "Socket.io", "Daisy UI"],
     description:
-      "Beam is a real-time chat application built with React, Node.js, MongoDB, and Socket.io. It features user authentication, private messaging. The frontend is styled with Daisy UI for a sleek and responsive design. I built this project to explore how real-time communication on the web using websockets.",
+      "Beam is a real-time chat application built with React, Node.js, MongoDB, and Socket.io. It features user authentication, private messaging. The frontend is styled with Daisy UI for a sleek and responsive design. I built this project to explore how real-time communication works using websockets.",
     demo: "#",
     source: "https://github.com/Anubhavrawat18/BEAM.git",
   },
@@ -65,7 +65,9 @@ function ProjectItem({ project }) {
       }`}
     >
       <button
+        type="button"
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
         className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
       >
         <div className="flex items-center gap-3">
@@ -100,8 +102,10 @@ function ProjectItem({ project }) {
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-350 ${
-          open ? "max-h-60" : "max-h-0"
+        className={`transition-all duration-350 ${
+          open
+            ? "max-h-[70vh] overflow-y-auto overscroll-contain [touch-action:pan-y]"
+            : "max-h-0 overflow-hidden"
         }`}
       >
         <div className="px-5 pb-5 border-t border-[#222]">
