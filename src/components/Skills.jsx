@@ -1,5 +1,4 @@
 import useFadeIn from "../hooks/useFadeIn";
-import { GolemSprite, RobotSprite } from "../sprites/PixelSprites";
 
 const skillGroups = [
   {
@@ -31,45 +30,6 @@ export default function Skills() {
           skills
         </h2>
         <div className="flex flex-col gap-8 md:flex-row md:gap-16">
-          <div className="border-green pt-20">
-            <div
-              style={{
-                position: "relative",
-                width: 200,
-                height: 200,
-                border: "2px solid var(--green-border)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow:
-                  "0 0 0 2px var(--bg), 0 0 0 4px var(--green-border), 0 0 28px var(--green-faint)",
-              }}
-            >
-              {/* corner brackets */}
-              {[
-                { pos: { top: -8, left: -8 }, char: "⌜" },
-                { pos: { top: -8, right: -8 }, char: "⌝" },
-                { pos: { bottom: -8, left: -8 }, char: "⌞" },
-                { pos: { bottom: -8, right: -8 }, char: "⌟" },
-              ].map(({ pos, char }) => (
-                <span
-                  key={char}
-                  style={{
-                    position: "absolute",
-                    ...pos,
-                    color: "var(--green)",
-                    fontSize: 22,
-                    fontFamily: "var(--font-pixel)",
-                  }}
-                >
-                  {char}
-                </span>
-              ))}
-              <div style={{ textAlign: "center" }}>
-                <GolemSprite color="#00ff41" size={240} />
-              </div>
-            </div>
-          </div>
           <div className="box1">
             <p className="text-green text-xs mb-8">$ skills --list --grouped</p>
 

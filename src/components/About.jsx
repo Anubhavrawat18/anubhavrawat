@@ -3,7 +3,7 @@ import useFadeIn from "../hooks/useFadeIn";
 const meta = [
   { key: "status", value: "open to work", green: true },
   { key: "location", value: "Chennai, India" },
-  { key: "studying", value: "B.Tech CSE — final year" },
+  { key: "studying", value: "B.Tech CSE - final year" },
   { key: "interests", value: "web, systems & coffee " },
   {
     key: "currently",
@@ -29,7 +29,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-4 text-sm text-[#bbb] leading-relaxed">
             <p>
-              Hey — I'm <strong className="text-white">Anubhav</strong>. I like
+              Hey! I'm <strong className="text-white">Anubhav</strong>. I like
               building things and obsessing over food.
             </p>
             <p>

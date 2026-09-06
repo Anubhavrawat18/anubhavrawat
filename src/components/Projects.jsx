@@ -31,7 +31,7 @@ const projects = [
       "Chaos Theory",
     ],
     description:
-      "A behavioral authentication system that generates one-time passwords through deterministic chaos. Instead of fixed secrets or TOTP counters, each OTP is computed by feeding a seed — derived from your password, a behavioral fingerprint, and the current timestamp — through Mandelbrot, Julia, and logistic map functions. The result is a time-bound, user-bound token that is practically impossible to replicate without matching both the credential and the behavior.",
+      "A behavioral authentication system that generates one-time passwords through deterministic chaos. Instead of fixed secrets or TOTP counters, each OTP is computed by feeding a seed - derived from your password, a behavioral fingerprint, and the current timestamp - through Mandelbrot, Julia, and logistic map functions. The result is a time-bound, user-bound token that is practically impossible to replicate without matching both the credential and the behavior.",
     demo: "#",
     source: "https://github.com/Anubhavrawat18/Fractal-Chaotic-Auth.git",
   },
